@@ -23,11 +23,17 @@ export const theme = createTheme({
     MuiRadio: {
       styleOverrides: {
         root: {
+          "& .MuiSvgIcon-root": {
+            width: "20px",
+            height: "20px",
+          },
           "&.Mui-checked": {
             color: "#3300FF",
-          },
-          "& .MuiSvgIcon-root": {
-            fontSize: 20,
+
+            "& .MuiSvgIcon-root path:first-of-type": {
+              transform: "scale(2.1)",
+              transformOrigin: "center",
+            },
           },
         },
       },

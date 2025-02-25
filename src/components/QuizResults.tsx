@@ -1,5 +1,6 @@
-import { Box, Typography, Button, Paper } from "@mui/material";
+import { Box, Typography, Paper } from "@mui/material";
 import { Question } from "../data/questions";
+import ButtonRestart from "./ButtonRestart";
 
 interface QuizResultsProps {
   questions: Question[];
@@ -88,18 +89,9 @@ export const QuizResults = ({ questions, userAnswers, onRestart }: QuizResultsPr
           );
         })}
       </Box>
-
-      <Button
-        variant="contained"
-        onClick={onRestart}
-        sx={{
-          mt: 4,
-          backgroundColor: "#3300FF",
-          borderRadius: "10px",
-        }}
-      >
-        Пройти еще раз
-      </Button>
+      <Box sx={{ display: "flex", justifyContent: "center", mt: 4 }}>
+        <ButtonRestart onClick={onRestart} />
+      </Box>
     </Box>
   );
 };
