@@ -15,8 +15,8 @@ export const QuizResults = ({ questions, userAnswers, onRestart }: QuizResultsPr
 
   const allWrong = correctAnswers === 0;
   const allCorrect = correctAnswers === questions.length;
-  const moreHalfCorrect = correctAnswers >= 5;
-  const lessHalfCorrect = correctAnswers <= 5;
+  const moreHalfCorrect = correctAnswers >= 5 && !allCorrect;
+  const lessHalfCorrect = correctAnswers < 5;
 
   return (
     <Box className="quiz-results">
